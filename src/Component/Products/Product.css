@@ -51,6 +51,7 @@
 
 /* ....................................get products....................................... */
 .get-products {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -74,7 +75,7 @@
   color: white;
   width: 40%;
 }
-.btn {
+.product-btn {
   padding: 1rem 2rem;
   margin-top: 20px;
 }
@@ -129,13 +130,77 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
-.addto{
+.addto {
   padding: 10px 50px;
   margin: 20px auto;
   text-align: center;
   width: 230px;
   background: white;
-  border:  1px solid #0084d6;
+  border: 1px solid #0084d6;
   border-radius: 5px;
 }
 
+@media screen and (max-width: 800px) {
+  .product-container {
+    height: auto;
+    width: 100%;
+    background: white;
+    position: absolute;
+  }
+  .product-content {
+    display: grid;
+    padding: 80px 0px;
+  }
+  .box {
+    height: 100%;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .get-products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 10px;
+  }
+
+  .item {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+  }
+  .item-desc {
+    position: absolute;
+    top: 50%;
+    /* left: 30%; */
+    transform: translate(-20%, -50%);
+    color: white;
+    width: 80%;
+    line-height: 2rem;
+    margin: auto;
+    text-align: center;
+  }
+
+  .item-desc p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .product-btn {
+    width: 100%;
+    margin-top: 40px;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin: 30px auto;
+  }
+}

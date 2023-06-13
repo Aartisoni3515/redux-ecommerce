@@ -16,9 +16,9 @@ const Home = () => {
         <div className="home-content">
           <h1>Raining Offers for hot summer!</h1>
           <h4>25% off on all products</h4>
-          <div>
+          <div className="home-btn" >
             <button>Shop Now</button>
-            <button className="btn-2">Find More</button>
+            <button className="btn">Find More</button>
           </div>
         </div>
       </div>

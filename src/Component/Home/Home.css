@@ -44,9 +44,47 @@
   padding: 1rem 2rem;
   font-size: 1.1rem;
 }
-.btn-2 {
+.btn{
   background-color: transparent;
   border: 1px solid white;
   color: white;
   margin-left: 20px;
+}
+@media screen and (max-width: 800px) {
+  .home-container {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+  }
+  .home-img {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 10%;
+  }
+  .home-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+  .btn {
+  margin-left: 0;
+  }
+
+  .home-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(-30%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .home-content h1 {
+    font-size: 2rem;
+  }
 }

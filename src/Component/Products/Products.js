@@ -45,7 +45,7 @@ const Product = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                   ac dictum.
                 </p>
-                <button className="btn">Shop Now</button>
+                <button className="product-btn">Shop Now</button>
               </div>
             </div>
             <div className="item">
@@ -59,7 +59,7 @@ const Product = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                   ac dictum.
                 </p>
-                <button className="btn">Shop Now</button>
+                <button className="product-btn">Shop Now</button>
               </div>
             </div>
             <div className="item">
@@ -73,7 +73,7 @@ const Product = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                   ac dictum.
                 </p>
-                <button className="btn">Shop Now</button>
+                <button className="product-btn">Shop Now</button>
               </div>
             </div>
           </div>
