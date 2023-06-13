@@ -1,0 +1,71 @@
+.service {
+  /* position: absolute;  */
+  /* display: block; */
+}
+.services {
+  height: auto;
+  width: 100%;
+  background: #f5f7f9;
+  position: relative;
+  text-align: center;
+}
+
+.service-img {
+  width: 80%;
+  margin: auto;
+  /* position: fixed; */
+  display: block;
+}
+
+.service-content {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 40%;
+}
+.service-content h1 {
+  font-size: 4rem;
+}
+
+.service-content h4 {
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
+
+.service-content button {
+  margin-top: 40px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+.btn-2 {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  margin-left: 20px;
+}
+
+.ser-des {
+  display: flex;
+  padding-top: 8%;
+  padding-bottom: 5%;
+}
+.cards {
+  line-height: 2rem;
+}
+
+.cards img {
+  width: 45px;
+}
+.cards h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+.cards p{
+ font-size: 1rem;
+ text-align: center;
+ width: 70%;
+ margin: 0 auto;
+}

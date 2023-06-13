@@ -1,0 +1,19 @@
+.cart-items {
+  background-color: #abb8c3;
+  height: 100vh;
+  width: 100%;
+  padding-top: 200px;
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+.c-img {
+  height: 100px;
+  width: 100%;
+}
+
+.cart-row{
+  border: 1px solid black;
+  
+
+}

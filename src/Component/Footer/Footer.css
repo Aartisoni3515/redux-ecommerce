@@ -1,0 +1,69 @@
+.footer {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+  margin-top: 290%;
+}
+
+.footer h1 {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 4%;
+}
+.footer-logo img {
+  width: 30%;
+}
+.footer-content h3 {
+  font-size: 1.5rem;
+  padding-top: 6%;
+}
+
+.footer-content h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-bottom: 9%;
+}
+.footer-content li {
+  line-height: 2rem;
+  color: gray;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+}
+.inp {
+  padding: 10px 30px;
+  text-align: left;
+  border: 1px solid #e2e2e2;
+}
+.search button {
+  margin-top: 20px;
+  width: 80%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0084d6;
+  border: 1px solid #0084d6;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 10%;
+}
+.icon {
+  width: 25%;
+  font-size: 1.2rem;
+}
+.icon ul {
+  display: flex;
+  justify-content: space-evenly;
+}
