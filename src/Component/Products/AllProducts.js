@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { add } from "./Store/CreateSlice";
 // import { getProducts } from "./Store/ProductSlice";
 import { getProducts } from "../../Redux/ProductSlice";
 // import { Alert } from "react-bootstrap";
-import {add} from "../../Redux/CreateSlice" 
-import "./Product.css";
+import { add } from "../../Redux/CreateSlice";
+// import "./ProductsCss/Product.css";
+import "./ProductCss/Product.css";
+
 import Service from "../Service/Service";
 import { Link } from "react-router-dom";
 
@@ -16,28 +18,25 @@ const AllProducts = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-  console.log(products, "data");
+  // console.log(products, "data");
   const addToCart = (product) => {
     dispatch(add(product));
   };
 
-  // if (status === "loading") {
-  //   return (
-  //     <div className="text-center">
-  //       <div className="spinner-border" role="status"></div>
-  //     </div>
-  //   );
-  // }
-  // if (status === "error") {
-  //   return (
-  //     <Alert className="text-center" variant="danger" key="danger">
-  //       Something went wrong !! Try again later...
-  //     </Alert>
-  //   );
-  //   {
-  //     /* <p>Something went Wrong !! Try again later..</p>; */
-  //   }
-  // }
+  if (status === "loading") {
+    return (
+      <div className="text-center">
+        <div className="spinner-border" role="status"></div>
+      </div>
+    );
+  }
+  if (status === "error") {
+    return (
+      <alert className="text-center" variant="danger" key="danger">
+        Something went wrong !! Try again later...
+      </alert>
+    );
+  }
 
   return (
     <>
@@ -54,9 +53,11 @@ const AllProducts = () => {
                 </div>
 
                 <div className="text-center">
-              <Link style={{color:"black"}} to={`allproducts/` + product.id}>
-              <strong style={{ fontWeight: "500" }}>{product.title}</strong>
-                </Link>    
+                  <Link style={{ color: "black" }} to={`/product/${product.id}`}>
+                    <strong style={{ fontWeight: "500" }}>
+                      {product.title}
+                    </strong>
+                  </Link>
 
                   <div className="category">
                     <span>{product.category}</span>
@@ -74,11 +75,9 @@ const AllProducts = () => {
         </div>
       </div>
 
-      
-      <Service/>
+      <Service />
     </>
   );
 };
 
 export default AllProducts;
-

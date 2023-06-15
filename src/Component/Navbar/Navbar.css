@@ -110,11 +110,11 @@ li {
     right: 10%;
   }
   .nav-list li {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-right: 1rem;
   }
   .nav img {
-    width: 100%;
+    width: 80%;
     height: 60%;
     padding-left: 0px;
   }

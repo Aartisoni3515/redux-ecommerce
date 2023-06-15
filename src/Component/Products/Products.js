@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Data from "./Data";
-import "./Product.css";
+import "./ProductCss/Product.css"
 import AllProducts from "./AllProducts";
 const Product = () => {
   return (
@@ -13,7 +13,7 @@ const Product = () => {
             <Carousel autoPlay={true} showThumbs={false}>
               {Data.map((info, index) => (
                 <div key={index} className="product-content  ">
-                  <div  className="box">
+                  <div className="box">
                     <img src={info.Image1} alt="" />
                   </div>
                   <div className="box">

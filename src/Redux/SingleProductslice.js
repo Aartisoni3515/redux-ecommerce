@@ -1,31 +1,34 @@
-// productSlice.js
-import { createSlice } from '@reduxjs/toolkit';
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
-  product: null,
-  loading: false,
-  error: null,
+  data: [],
+  status: "running",
 };
-
 const SingleProductslice = createSlice({
-  name: 'product',
+  name: "product",
   initialState,
-  reducers: {
-    getProductStart: (state) => {
-      state.loading = true;
-      state.error = null;
-    },
-    getProductSuccess: (state, action) => {
-      state.loading = false;
-      state.product = action.payload;
-    },
-    getProductFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
+
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getProduct.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getProduct.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.status = "running";
+      })
+      .addCase(getProduct.rejected, (state) => {
+        state.status = "error";
+      });
   },
 });
 
-export const { getProductStart, getProductSuccess, getProductFailure } = SingleProductslice.actions;
-
+export const { fetchProducts } = SingleProductslice.actions;
 export default SingleProductslice.reducer;
+
+export const getProduct = createAsyncThunk("products/get", async (productId) => {
+  const data = await fetch(`https://fakestoreapi.com/products/${productId}`);
+  const result = data.json();
+  console.log(result);
+  return result;
+});

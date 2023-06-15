@@ -10,7 +10,7 @@ import Contact from "./Component/Contact/Contact";
 import AllProducts from "./Component/Products/AllProducts";
 import Cart from "./Component/Cart/Cart";
 import Service from "./Component/Service/Service";
-import ProductDetail from "./Component/ProductDetail/ProductDetail";
+import ProductDetail from "./Component/Products/ProductDetail";
 
 function App() {
   return (
@@ -22,8 +22,9 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/allproducts/:id" element={<AllProducts />} />
-          <Route path="/allproducts/products/:id" component={<ProductDetail/>} />
+          <Route path="/allproducts" element={<AllProducts />} />
+          {/* <Route path="/product/:productId" component={<ProductDetail/>} /> */}
+          <Route path="/product/:productId" element={<ProductDetail/>}/>
           <Route path="/cart" element={<Cart />} />
           <Route path="/service" element={<Service />} />
           <Route path="/Contact" element={<Contact />} />
