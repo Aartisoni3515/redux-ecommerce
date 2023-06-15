@@ -11,6 +11,7 @@ import AllProducts from "./Component/Products/AllProducts";
 import Cart from "./Component/Cart/Cart";
 import Service from "./Component/Service/Service";
 import ProductDetail from "./Component/Products/ProductDetail";
+import CheckOut from "./Component/CheckOut/CheckOut";
 
 function App() {
   return (
@@ -25,9 +26,11 @@ function App() {
           <Route path="/allproducts" element={<AllProducts />} />
           {/* <Route path="/product/:productId" component={<ProductDetail/>} /> */}
           <Route path="/product/:productId" element={<ProductDetail/>}/>
+          <Route path="/product/checkout/:productId/" element ={<CheckOut/>}/>
           <Route path="/cart" element={<Cart />} />
           <Route path="/service" element={<Service />} />
           <Route path="/Contact" element={<Contact />} />
+
         </Routes>
       </Router>
       {/* <Footer /> */}

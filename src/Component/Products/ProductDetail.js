@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../Redux/SingleProductslice";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./ProductCss/ProductDetail.css";
 
 const ProductDetail = () => {
@@ -33,7 +33,9 @@ const ProductDetail = () => {
           </h3>
           {/* <div className="ratings">{rating.rate}</div> */}
           <h3 className="product-price">${price}</h3>
-          <button className="btn-1">Buy now</button>
+          <Link to={`/product/checkout/${id}`}>
+            <button className="btn-1">Buy now</button>
+          </Link>
         </div>
       </div>
     </div>

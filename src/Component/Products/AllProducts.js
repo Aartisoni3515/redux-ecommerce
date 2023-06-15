@@ -60,6 +60,7 @@ const AllProducts = () => {
                   </Link>
 
                   <div className="category">
+                  <p>{product.price}</p>
                     <span>{product.category}</span>
                   </div>
 

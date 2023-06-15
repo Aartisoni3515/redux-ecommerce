@@ -11,37 +11,54 @@ const Cart = () => {
     dispatch(increase(productId));
   };
   const handleDecrement = (productId) => {
-    dispatch(decrease(productId))
+    dispatch(decrease(productId));
   };
-const remove =(product)=>{
-  dispatch(Remove(product))
-}
+  const remove = (product) => {
+    dispatch(Remove(product));
+  };
+
+  const totalPrice = products.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
+
   return (
     <div>
       {products.length > 0 ? (
-        <div  className="cart-row">
+        <div className="cart-row">
           {products.map((product, id) => (
             <div key={id} className="cart-items">
-              <div>
-                <img className="c-img" src={product.image} alt="" />
+              <div className="cart-det">
+                <div>
+                  <img className="c-img" src={product.image} alt="" />
+                </div>
+                <div>
+                  <h1>{product.title}</h1>
+                </div>
+                <div>
+                  <p style={{textAlign:"center"}}>Price <br /> <strong>₹</strong>{totalPrice}</p>
+                </div>
+                <div className="cart-btn">
+                  <button 
+                    className="incre"
+                    onClick={() => handleDecrement(product.id)}
+                  >
+                    -
+                  </button>
+                  <p className="qtn">{product.quantity}</p>
+                  <button
+                    className="incre"
+                    onClick={() => handleIncrement(product.id)}
+                  >
+                    +
+                  </button>
+                </div>
+                <div>
+                  <button className="remove" onClick={() => remove(product)}>
+                    x
+                  </button>
+                </div>
               </div>
-              <div>
-                <h1>{product.title}</h1>
-              </div>
-              <div>
-                <p>{product.price}</p>
-              </div>
-              <div>
-                <button onClick={() => handleDecrement(product.id)}>- </button>
-              </div>
-              <p>{product.quantity}</p>
-              <div>
-                <button onClick={() => handleIncrement(product.id)}>+ </button>
-              </div>
-              {/* <div>
-                <button onClick={() => remove(product)}>remove</button>
-              </div> */}
-
             </div>
           ))}
         </div>
