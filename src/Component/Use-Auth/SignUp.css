@@ -1,0 +1,28 @@
+.signup-container {
+  /* background-color: #454545; */
+  height: 100vh;
+  width: 100%;
+}
+.signup-content {
+  background-color: #f5f7f9;
+  height: 70vh;
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 10px 10px 8px 10px #888888;
+}
+
+.signup-content input {
+  padding: 6px 50px;
+  text-align: left;
+  margin: 0 auto;
+}
+.content {
+  text-align: center;
+}
+
+.content label{
+ display: block;
+ text-align: center;
+ margin-right: 200px;
+
+}

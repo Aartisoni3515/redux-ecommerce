@@ -31,4 +31,3 @@ export const getProducts = createAsyncThunk("products/get", async () => {
   const result = data.json();
   return result;
 });
-

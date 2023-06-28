@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../Redux/SingleProductslice";
 import { Link, useParams } from "react-router-dom";
 import "./CheckOut.css";
+// import {  } from "../../Redux/CreateSlice";
 
 const CheckOut = () => {
   const { productId } = useParams();
@@ -13,7 +14,17 @@ const CheckOut = () => {
     dispatch(getProduct(productId));
   }, [productId]);
   console.log(product, "product");
-  const { image, title, price, category, description, rating, id } = product;
+  const { image, title, price, category, id, quantity } = product;
+
+  // const totalPrice = product.reduce(
+  //   (total, product) => total + product.price * product.quantity,
+  //   0
+  // );
+  const totalPrice = product.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
+
   return (
     <div>
       <div className="container">
@@ -39,7 +50,7 @@ const CheckOut = () => {
                         Category : {category}
                       </span>
                       <br />
-                      <span>1</span>
+                      <span> quantity:{quantity}</span>
                     </td>
                   </tr>
                   <tr>
@@ -50,18 +61,16 @@ const CheckOut = () => {
                 </tbody>
               </table>
               <div className="line" />
-
               <div className="line" />
-
               <div className="line" />
               <div className="total">
                 <span>Discount:</span> <br />
-                <span style={{ float: "left" }}>TOTAL :</span>
+                <span style={{ float: "left" }}>TOTAL :78 </span>
                 <span style={{ float: "right", textAlign: "right" }}>
                   <span>
-                    10%off <strike>{price}</strike>{" "}
-                  </span>{" "}
-                  <br />$
+                    10%off <strike>{price}</strike>
+                  </span>
+                  <br />$ {totalPrice}
                 </span>
               </div>
             </div>

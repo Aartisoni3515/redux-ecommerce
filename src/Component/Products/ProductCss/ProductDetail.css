@@ -1,8 +1,9 @@
 .product-details {
   background-color: #f5f7f9;
-  height: 100vh;
+  height: auto;
   width: 100%;
   padding-top: 10%;
+  padding-bottom: 8%;
 }
 .images {
   width: 100%;
@@ -25,10 +26,15 @@
   width: 100%;
   float: left;
   text-align: center;
+  line-height: 2rem;
+  text-transform: capitalize;
 }
 .btn-1 {
   padding: 0.7rem 5rem;
   margin-top: 1rem;
+}
+.ratings{
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 800px) {

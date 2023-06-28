@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../Redux/ProductSlice";
 // import { Alert } from "react-bootstrap";
 import { add } from "../../Redux/CreateSlice";
-// import "./ProductsCss/Product.css";
 import "./ProductCss/Product.css";
 
 import Service from "../Service/Service";
@@ -19,6 +18,7 @@ const AllProducts = () => {
     dispatch(getProducts());
   }, []);
   // console.log(products, "data");
+
   const addToCart = (product) => {
     dispatch(add(product));
   };
@@ -40,9 +40,9 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="row">
+      <div className="rows">
         <h1 className="head">Featured Products</h1>
-        <hr className="line" />
+        <hr className="lines" />
 
         <div className="p-data">
           {products?.length > 0 &&
@@ -53,18 +53,18 @@ const AllProducts = () => {
                 </div>
 
                 <div className="text-center">
-                  <Link style={{ color: "black" }} to={`/product/${product.id}`}>
+                  <Link
+                    style={{ color: "black" }}
+                    to={`/product/${product.id}`}
+                  >
                     <strong style={{ fontWeight: "500" }}>
                       {product.title}
                     </strong>
                   </Link>
-
-                  <div className="category">
-                  <p>{product.price}</p>
+                 <div className="category">
+                    <p>{product.price}</p>
                     <span>{product.category}</span>
                   </div>
-
-                  <div className="price">${product.price}</div>
                 </div>
                 <div>
                   <button className="addto" onClick={() => addToCart(product)}>

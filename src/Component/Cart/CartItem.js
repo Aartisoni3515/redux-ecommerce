@@ -1,27 +1,32 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Cart from "./Cart";
 
-const cartItem = () => {
+const CartItem = () => {
   const products = useSelector((state) => state.cart);
-
-  const renderList = products.map((product) => {
-
-    const { id } = product;
-    return (
-      <div className="display" key={id}>
+  console.log(products);
+  
+console.log(totalPrice);
+  // const renderList = products.map((product) => {
+  // const { id } = product;
+  return (
+    <div className="display">
+      {products.map((product, id) => (
         <Cart
-          id={id}
+          key={id}
+          id={product.id}
           title={product.title}
           image={product.image}
           category={product.category}
           price={product.price}
+          totalPrice={totalPrice}
         />
-      </div>
-    );
-  });
-  return <>{renderList}</>;
+      ))}
+    </div>
+  );
+
+  // return <>{renderList}</>;
 };
 
-export default cartItem;
+export default CartItem;

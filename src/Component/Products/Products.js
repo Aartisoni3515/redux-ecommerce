@@ -7,7 +7,7 @@ import AllProducts from "./AllProducts";
 const Product = () => {
   return (
     <>
-      <div className="product-container">
+      <div className="products-container">
         <div className="brand">
           <div>
             <Carousel autoPlay={true} showThumbs={false}>

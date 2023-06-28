@@ -23,6 +23,9 @@ const SingleProductslice = createSlice({
   },
 });
 
+
+
+
 export const { fetchProducts } = SingleProductslice.actions;
 export default SingleProductslice.reducer;
 
