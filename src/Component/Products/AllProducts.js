@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { add } from "./Store/CreateSlice";
-// import { getProducts } from "./Store/ProductSlice";
 import { getProducts } from "../../Redux/ProductSlice";
-// import { Alert } from "react-bootstrap";
 import { add } from "../../Redux/CreateSlice";
 import "./ProductCss/Product.css";
-
 import Service from "../Service/Service";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
@@ -21,20 +19,23 @@ const AllProducts = () => {
 
   const addToCart = (product) => {
     dispatch(add(product));
+    toast.success("Item Added", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 600,
+      hideProgressBar: true,
+    });
   };
 
   if (status === "loading") {
-    return (
-      <div className="text-center">
-        <div className="spinner-border" role="status"></div>
-      </div>
-    );
+    return <div style={{ textAlign: "center" }}> loading....</div>;
   }
   if (status === "error") {
     return (
-      <alert className="text-center" variant="danger" key="danger">
+      <div
+        style={{ textAlign: "center", color: "white", paddingBottom: "10%" }}
+      >
         Something went wrong !! Try again later...
-      </alert>
+      </div>
     );
   }
 
@@ -43,7 +44,6 @@ const AllProducts = () => {
       <div className="rows">
         <h1 className="head">Featured Products</h1>
         <hr className="lines" />
-
         <div className="p-data">
           {products?.length > 0 &&
             products?.map((product, id) => (
@@ -61,7 +61,7 @@ const AllProducts = () => {
                       {product.title}
                     </strong>
                   </Link>
-                 <div className="category">
+                  <div className="category">
                     <p>{product.price}</p>
                     <span>{product.category}</span>
                   </div>
@@ -70,12 +70,12 @@ const AllProducts = () => {
                   <button className="addto" onClick={() => addToCart(product)}>
                     Add to Cart
                   </button>
+                  <ToastContainer />
                 </div>
               </div>
             ))}
         </div>
       </div>
-
       <Service />
     </>
   );

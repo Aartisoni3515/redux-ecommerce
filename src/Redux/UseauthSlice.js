@@ -1,6 +1,4 @@
-// signupSlice.js
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loading: false,
@@ -23,19 +21,18 @@ export const signupUser = createAsyncThunk(
 );
 
 const UseauthSlice = createSlice({
-  name: "signup",
+  name: signupUser,
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(signupUser.pending, (state) => {
-        state.loading = true;
-        state.error = null;
+        (state.loading = true), (state.error = null);
       })
       .addCase(signupUser.fulfilled, (state) => {
         state.loading = false;
       })
-      .addCase(signupUser.rejected, (state, action) => {
+      .addCase(signupUser.rejected, (state) => {
         state.loading = false;
         state.error = action.error.message;
       });

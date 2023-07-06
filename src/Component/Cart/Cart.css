@@ -12,7 +12,7 @@
   border-radius: 3px;
   margin: 0 auto;
   padding: 3rem;
-  height: auto;
+  height: 200px;
   background-color: white;
 }
 .cart-det h1 {
@@ -49,6 +49,7 @@
   border: 1px solid black;
   margin: 0 auto;
   background-color: cadetblue;
+  height: auto;
 }
 .remove {
   background-color: cadetblue;

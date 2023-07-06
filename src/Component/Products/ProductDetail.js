@@ -77,8 +77,10 @@ const ProductDetail = () => {
                 <button
                   className="incre"
                   onClick={() => handleIncrement(product.id)}
-                > + </button>
-            </div>
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>

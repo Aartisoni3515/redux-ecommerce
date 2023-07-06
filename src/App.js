@@ -14,6 +14,7 @@ import ProductDetail from "./Component/Products/ProductDetail";
 import CheckOut from "./Component/CheckOut/CheckOut";
 // import CartItem from "./Component/Cart/CartItem";
 
+
 function App() {
   return (
     <>
@@ -25,7 +26,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/allproducts" element={<AllProducts />} />
-          {/* <Route path="/product/:productId" component={<ProductDetail/>} /> */}
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/product/checkout/:productId/" element={<CheckOut />} />
           <Route path="/cart" element={<Cart />} />

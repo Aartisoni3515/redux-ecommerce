@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Cart.css";
-import { Remove, decrease, increase } from "../../Redux/CreateSlice";
+import { Remove, decrease, increase, getTotal } from "../../Redux/CreateSlice";
 import { GrClose } from "react-icons/gr";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { BsFillBagXFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart);
-  // const quantity = useSelector(state=> state.cart.totalQuantity);
-  // const totalPrice = useSelector(state=>state.cart.totalAmount);
-  // console.log(products);
   const dispatch = useDispatch();
   const handleIncrement = (productId) => {
     dispatch(increase(productId));
@@ -21,12 +20,23 @@ const Cart = () => {
   };
   const remove = (product) => {
     dispatch(Remove(product));
+    toast.success("Item Removed", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 600,
+      hideProgressBar: true,
+    });
   };
+
+  // useEffect(() => {
+  //   dispatch(getTotal);
+  // }, []);
 
   const totalPrice = products.reduce(
     (total, product) => total + product.price * product.quantity,
     0
   );
+  
+
   // const quantity = products.map((product) => product.quantity);
 
   return (
@@ -67,15 +77,19 @@ const Cart = () => {
                   <button className="remove" onClick={() => remove(product)}>
                     <GrClose />
                   </button>
+                  <ToastContainer />
                 </div>
               </div>
             </div>
           ))}
           <div className="cart-footer">
-            <p>
-              <MdKeyboardDoubleArrowLeft /> BACK TO SHOP
-            </p>
+            <Link to="/products">
+              <p>
+                <MdKeyboardDoubleArrowLeft /> BACK TO SHOP
+              </p>
+            </Link>
             <strong>TOTAL: ₹{parseFloat(totalPrice).toFixed(2)}</strong>
+            {/* <span>{total}</span> */}
           </div>
         </div>
       ) : (

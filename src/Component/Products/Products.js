@@ -9,7 +9,7 @@ const Product = () => {
     <>
       <div className="products-container">
         <div className="brand">
-          <div>
+          <div className="brand-name">
             <Carousel autoPlay={true} showThumbs={false}>
               {Data.map((info, index) => (
                 <div key={index} className="product-content  ">
